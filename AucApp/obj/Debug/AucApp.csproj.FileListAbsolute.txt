@@ -82,3 +82,6 @@ c:\users\my\documents\visual studio 2015\Projects\AucApp\AucApp\obj\Debug\AucApp
 c:\users\my\documents\visual studio 2015\Projects\AucApp\AucApp\obj\Debug\AucApp.pdb
 c:\users\my\documents\visual studio 2015\Projects\AucApp\AucApp\obj\Debug\AucApp.Migrations.init.resources
 c:\users\my\documents\visual studio 2015\Projects\AucApp\AucApp\obj\Debug\AucApp.csproj.GenerateResource.Cache
+C:\Users\MY\documents\visual studio 2015\Projects\AucApp\AucApp\obj\Debug\AucApp.Migrations.add_ImgUrl_property_to_products.resources
+C:\Users\MY\documents\visual studio 2015\Projects\AucApp\AucApp\obj\Debug\AucApp.Migrations.test.resources
+C:\Users\MY\documents\visual studio 2015\Projects\AucApp\AucApp\obj\Debug\AucApp.Migrations.falto.resources

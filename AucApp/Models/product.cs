@@ -14,15 +14,22 @@ namespace AucApp.Models
             bidDatas = new HashSet<bidData>();
         }
 
+        [Required]
         public int id { get; set; }
 
         [Required]
         [StringLength(50)]
         public string name { get; set; }
 
+        [Required]
+        public string ImgUrl { get; set; }
+
+        [Required]
         public int min_bid { get; set; }
 
-        public int bid_end_time { get; set; }
+        [Required]
+        [DataType(DataType.Date)]
+        public DateTime bid_end_time { get; set; }
 
         [Required]
         [StringLength(128)]

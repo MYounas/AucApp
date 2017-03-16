@@ -18,6 +18,8 @@ namespace AucApp.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int prod_id { get; set; }
 
+        public int MyProperty { get; set; }
+
         public int bid_value { get; set; }
 
         public virtual product product { get; set; }

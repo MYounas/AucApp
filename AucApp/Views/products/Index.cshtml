@@ -1,0 +1,58 @@
+﻿@model IEnumerable<AucApp.Models.product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.min_bid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.bid_end_time)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.user_id)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.ImgUrl)
+        </th>
+        <th>Actions</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.min_bid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.bid_end_time)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.user_id)
+        </td>*@
+        <td>
+            <img src="~/images/@item.ImgUrl" width="200" height="100" />
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @*@Html.ActionLink("Details", "Details", new { id=item.id }) |*@
+            @*@Html.ActionLink("Delete", "Delete", new { onclick="confirm('Are you sure to Delete')", id=item.id })*@
+            @Html.ActionLink("Delete", "DeleteConfirmed", new {  id = item.id },new { onclick = "return confirm('Are you sure to Delete');" })
+        </td>
+    </tr>
+}
+
+</table>
