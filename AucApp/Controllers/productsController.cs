@@ -136,6 +136,25 @@ namespace AucApp.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult DoABid()
+        {
+            return View(db.products.Where(x=>x.user_id!=User.Identity.GetUserId()));
+        }
+
+        public ActionResult MakeABid(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            product product = db.products.Find(id);
+            if (product == null)
+            {
+                return HttpNotFound();
+            }
+            return View(product);
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
