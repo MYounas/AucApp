@@ -42,6 +42,7 @@ namespace AucApp.Controllers
         public ActionResult Create()
         {
             ViewBag.tempMsg = "";
+
             return View();
         }
 
@@ -138,7 +139,9 @@ namespace AucApp.Controllers
 
         public ActionResult DoABid()
         {
-            return View(db.products.Where(x=>x.user_id!=User.Identity.GetUserId()));
+            var currentUserId = User.Identity.GetUserId();
+            var data = db.products.Where(x => x.user_id != currentUserId);
+            return View(data);
         }
 
         public ActionResult MakeABid(int? id)

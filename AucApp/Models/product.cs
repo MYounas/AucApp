@@ -14,7 +14,7 @@ namespace AucApp.Models
             bidDatas = new HashSet<bidData>();
         }
 
-        [Required]
+        //[Required]
         public int id { get; set; }
 
         [Required]
