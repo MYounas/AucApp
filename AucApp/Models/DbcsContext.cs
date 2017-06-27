@@ -23,5 +23,7 @@ namespace AucApp.Models
                 .HasForeignKey(e => e.prod_id)
                 .WillCascadeOnDelete(false);
         }
+
+        public System.Data.Entity.DbSet<AucApp.Models.categories> categories { get; set; }
     }
 }
