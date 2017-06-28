@@ -35,6 +35,9 @@ namespace AucApp.Models
         [StringLength(128)]
         public string user_id { get; set; }
 
+        [Required]
+        public int Cid { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<bidData> bidDatas { get; set; }
     }
