@@ -14,21 +14,15 @@ namespace AucApp.Models
             bidDatas = new HashSet<bidData>();
         }
 
-        //[Required]
         public int id { get; set; }
 
         [Required]
         [StringLength(50)]
         public string name { get; set; }
 
-        [Required]
-        public string ImgUrl { get; set; }
-
-        [Required]
         public int min_bid { get; set; }
 
-        [Required]
-        [DataType(DataType.Date)]
+        [Column(TypeName = "date")]
         public DateTime bid_end_time { get; set; }
 
         [Required]
@@ -36,9 +30,13 @@ namespace AucApp.Models
         public string user_id { get; set; }
 
         [Required]
+        public string ImgUrl { get; set; }
+
         public int Cid { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<bidData> bidDatas { get; set; }
+
+        public virtual category category { get; set; }
     }
 }

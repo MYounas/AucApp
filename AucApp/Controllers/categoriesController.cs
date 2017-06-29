@@ -27,12 +27,12 @@ namespace AucApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            categories categories = db.categories.Find(id);
-            if (categories == null)
+            category category = db.categories.Find(id);
+            if (category == null)
             {
                 return HttpNotFound();
             }
-            return View(categories);
+            return View(category);
         }
 
         // GET: categories/Create
@@ -46,16 +46,16 @@ namespace AucApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,name")] categories categories)
+        public ActionResult Create([Bind(Include = "Id,name")] category category)
         {
             if (ModelState.IsValid)
             {
-                db.categories.Add(categories);
+                db.categories.Add(category);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(categories);
+            return View(category);
         }
 
         // GET: categories/Edit/5
@@ -65,12 +65,12 @@ namespace AucApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            categories categories = db.categories.Find(id);
-            if (categories == null)
+            category category = db.categories.Find(id);
+            if (category == null)
             {
                 return HttpNotFound();
             }
-            return View(categories);
+            return View(category);
         }
 
         // POST: categories/Edit/5
@@ -78,15 +78,15 @@ namespace AucApp.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,name")] categories categories)
+        public ActionResult Edit([Bind(Include = "Id,name")] category category)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(categories).State = EntityState.Modified;
+                db.Entry(category).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(categories);
+            return View(category);
         }
 
         // GET: categories/Delete/5
@@ -96,12 +96,12 @@ namespace AucApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            categories categories = db.categories.Find(id);
-            if (categories == null)
+            category category = db.categories.Find(id);
+            if (category == null)
             {
                 return HttpNotFound();
             }
-            return View(categories);
+            return View(category);
         }
 
         // POST: categories/Delete/5
@@ -109,8 +109,8 @@ namespace AucApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            categories categories = db.categories.Find(id);
-            db.categories.Remove(categories);
+            category category = db.categories.Find(id);
+            db.categories.Remove(category);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
